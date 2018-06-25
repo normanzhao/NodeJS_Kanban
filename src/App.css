@@ -1,0 +1,16 @@
+.titleText {
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    border: 3px solid #aaaaaa;
+}
+
+.column-item {
+    margin: 1.5%;
+    padding: 1%;
+    border: 1px solid #aaaaaa;
+}
+
+.hidden-data {
+    display: none;
+}

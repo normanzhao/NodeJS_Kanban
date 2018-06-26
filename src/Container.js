@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './Container.css';
 
-class Container extends Component {
+export default class Container extends Component {
     render() {
         return (
             <div className={this.props.class}>
@@ -13,4 +13,3 @@ class Container extends Component {
 }
 // id="open" onDrop="drop(event)" onDragover="allowDrop"
 // onDragstart="return false;" onDrop="false"
-export default Container

@@ -3,7 +3,7 @@ import './App.css';
 import Header from './Header.js'
 import Container from './Container.js'
 
-class App extends Component {
+export default class App extends Component {
     render() {
         return (
             <div>
@@ -16,4 +16,3 @@ class App extends Component {
     }
 }
 
-export default App;

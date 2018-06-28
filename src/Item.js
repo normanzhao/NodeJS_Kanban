@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import './Item.css';
+import './styles.css';
 
 export default class Item extends Component {
     render() {
         return (
-            <div className="Item">
-                <div className="ItemContent">
+            <div className="Modal">
+                <div className="ModalContent">
                     <form name="formItem">
                         Project:
                         <select style={{width:'15%'}} id="project" name="project">
@@ -31,8 +31,8 @@ export default class Item extends Component {
                             Item description:<br />
                             <textarea rows="10" style={{ width: '99%', resize: 'none' }} name="description"></textarea><br />
                             <div style={{textAlign: 'right', width: '100%' }}>
-                                <button style={{ marginRight: '2.5%' }} className="submitButton" name="submitted" value="newItem">Submit</button>
-                                <button className="cancelButton" onClick={() => { console.log("Close"); }} type="button">Cancel</button>
+                            <button style={{ marginRight: '2.5%' }} className="submitButton" name="submitted" value="newItem">Submit</button>
+                            <button className="cancelButton" onClick={this.props.closeModal} type="button">Cancel</button>
                             </div>
                      </form>    
                 </div>

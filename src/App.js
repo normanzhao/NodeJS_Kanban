@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
-import './App.css';
-import Header from './Header.js'
-import Container from './Container.js'
+import { Switch, Route } from 'react-router-dom'
+import Main from './Main.js'
+import History from './History.js'
 
 export default class App extends Component {
     render() {
         return (
             <div>
-                <Header />
-                <Container class="open" />
-                <Container class="ongoing" />
-                <Container class="closed" />
+                <Switch>
+                    <Route exact path='/' component={Main} />
+                    <Route exact path='/history' component={History} />
+                </Switch>
             </div>
         );
     }

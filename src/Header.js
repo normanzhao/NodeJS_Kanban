@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import './styles.css';
-import Item from './Item.js'
+import Modal from './Modal.js'
 
 export default class Header extends Component {
     constructor(props) {
@@ -15,26 +15,29 @@ export default class Header extends Component {
     };
 
     hideModal() {
-        this.setState({ showModal: false });
+        this.setState({
+            showModal: false,
+            modalType: ""
+        });
     }
 
     render() {
         return (
             <div>
-                {this.state.showModal && <Item closeModal={this.hideModal} />}
+                {this.state.showModal && <Modal closeSelf={this.hideModal} modalType={this.state.modalType} />}
             <table className="header" >
                 <tbody>
                     <tr>
                         <th className="left" style={{ width: '150%', paddingLeft: '15%', paddingTop: '5%' }}>
-                            <button className="left Button" onClick={() => { console.log("Release"); /*TODO: edit later to release*/ }}>Release</button>
+                                <button className="left Button" onClick={() => { this.setState({ showModal: true, modalType: "release" }); }}>Release</button>
                             <Link to='/history'>
                                  <button className="right Button">History</button>
                             </Link>
                         </th>
                         <th className="header-title">KANBAN BOARD</th>
                         <th className="right" style={{ width: '150%', paddingRight: '15%', paddingTop: '5%' }}>
-                            <button className="left Button" onClick={() => { this.setState({ showModal: true }); }}>New Project</button>
-                            <button className="right Button"onClick={() => { this.setState({ showModal: true }); }}>New item</button>
+                            <button className="left Button" onClick={() => { this.setState({ showModal: true, modalType:"project" }); }}>New Project</button>
+                            <button className="right Button" onClick={() => { this.setState({ showModal: true, modalType:"item" }); }}>New item</button>
                         </th>
                     </tr>
                 </tbody>

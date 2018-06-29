@@ -1,0 +1,24 @@
+Header
+    History
+        History page
+    Release
+        Release Modal
+            Select project to release
+    Title
+    New Project
+        New Project Modal
+            Name
+    New Item
+        New Item Modal
+            Project name
+            Item name
+            Item priority
+            Item Title
+            Item description
+Container: Open, Ongoing, Closed
+    Item
+        Project name
+        Item name
+        Item priority
+        Item Title
+    

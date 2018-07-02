@@ -29,10 +29,10 @@ export default class Header extends Component {
                 <tbody>
                     <tr>
                         <th className="left" style={{ width: '150%', paddingLeft: '15%', paddingTop: '5%' }}>
-                                <button className="left Button" onClick={() => { this.setState({ showModal: true, modalType: "release" }); }}>Release</button>
                             <Link to='/history'>
-                                 <button className="right Button">History</button>
+                                <button className="left Button">History</button>
                             </Link>
+                             <button className="right Button" onClick={() => { this.setState({ showModal: true, modalType: "release" }); }}>Release</button>
                         </th>
                         <th className="header-title">KANBAN BOARD</th>
                         <th className="right" style={{ width: '150%', paddingRight: '15%', paddingTop: '5%' }}>

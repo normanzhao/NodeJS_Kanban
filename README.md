@@ -1,2 +1,2 @@
-# NodeJS_Kanban
-NodeJS rewrite of Kanban board
+# React_Kanban
+React rewrite of Kanban board

@@ -36,7 +36,7 @@ export default class Modal extends Component {
                 return (
                     <div>
                         Project title:
-                        <input type="text" style={{ width: '48%', margin: '1.5% 0% 0.75  % 0%' }} name="title" onChange={this.stateUpdater} />
+                        <input type="text" style={{ width: '48%', margin: '1.5% 0% 0.75  % 0%' }} name="title" onChange={this.stateUpdater} maxLength="25"/>
                         &nbsp;Acronym:
                         <input type="text" style={{ width: '15%', margin: '1.5% 0% 0.75  % 0%', textTransform:'uppercase' }} name="acronym" onChange={this.stateUpdater} maxLength="3"/> <br />
                         Project description: <br />

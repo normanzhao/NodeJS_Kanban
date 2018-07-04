@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { accessAPI } from './functions'
 import './styles.css';
 
 export default class Modal extends Component {
@@ -88,7 +89,25 @@ export default class Modal extends Component {
     }
 
     submitItem(e) {
-        //add date when writing to JSON
+        let method;
+        let resource;
+        let data;
+        switch (this.props.modalType) {
+            case 'project':
+                data = { title: this.state.title, acronym: this.state.acronym, description: this.state.description }
+                resource = "projects";
+                method = "POST";
+                break;
+            case 'item':
+                data = { project: 1, type: this.state.type, priority: this.state.priority, title: this.state.title, description: this.state.description }
+                resource = "items";
+                method = "POST";
+                break;
+            default:
+                break;
+        }
+        accessAPI(method, resource, data);
+        alert();
     }
 
     render() {

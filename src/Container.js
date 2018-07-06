@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Item from './Item.js';
 import './styles.css';
 
 export default class Container extends Component {

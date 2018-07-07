@@ -90,7 +90,7 @@ export default class Modal extends Component {
                             <option value="-0">No priority</option>
                         </select> <br />
                         Item title:
-                        <input type="text" style={{ width: '84%', margin: '1.5% 0% 0.75  % 0%' }} name="title" onChange={this.stateUpdater} required/> <br />
+                        <input type="text" style={{ width: '84%', margin: '1.5% 0% 0.75  % 0%' }} name="title" maxLength="35" onChange={this.stateUpdater} required/> <br />
                         Item description: <br />
                         <textarea rows="10" style={{ width: '99%', resize: 'none' }} name="description" onChange={this.stateUpdater}></textarea> <br />
                         <div style={{ textAlign: 'right', width: '100%' }}>

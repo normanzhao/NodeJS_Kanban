@@ -73,16 +73,32 @@
 /*Item*/
 .Item {
     border: 1px solid #aaaaaa;
+    width: 98%;
+    height: 60px;
+    padding: 1%;
 }
 
-.itemText{
+.itemTitle {
     float: left;
     width: 95%;
+    font-size: 18px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.itemDescription {
+    font-size: 15px;
+    height: 35px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-top: 0.5%;
 }
 
 .itemAttributes {
     float: right;
     width: 3%;
+    padding-right: 2%;
 }
 /*Modals*/
 .Modal {

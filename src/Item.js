@@ -7,12 +7,14 @@ export default class Item extends Component {
         let type = { Story: "fas fa-book", Feature: "fas fa-exclamation", Request: "fas fa-question", Bug: "fas fas fa-bug", Epic: "fas fa-bolt" }[this.props.type];
         return (
             <div className='Item'>
-                <div className='itemText'>{this.props.acronym} : {this.props.title} </div>
+                <div className='itemTitle'>{this.props.acronym} : {this.props.title} 
+                    <div className='itemDescription'>{this.props.description} </div>
+                </div>
                 <div className='itemAttributes'>
                     <table>
                         <tbody>
                             <tr>
-                                <td className={priority} style={{ width: '100%', paddingLeft: '15%', border:'none' }}></td>
+                                <td className={priority} style={{ width: '100%', paddingLeft: '20%', border:'none' }}></td>
                             </tr>
                             <tr>
                                 <td className={type} style={{ width: '100%', border: 'none' }}></td>

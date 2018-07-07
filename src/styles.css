@@ -90,9 +90,8 @@
 .itemDescription {
     font-size: 15px;
     height: 35px;
-    overflow: hidden;
-    text-overflow: ellipsis;
     padding-top: 0.5%;
+    white-space: initial;
 }
 
 .itemAttributes {

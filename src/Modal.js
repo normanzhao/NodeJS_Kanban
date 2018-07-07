@@ -113,7 +113,7 @@ export default class Modal extends Component {
         let data;
         switch (this.props.modalType) {
             case 'project':
-                data = { title: this.state.title, acronym: this.state.acronym, description: this.state.description }
+                data = { title: this.state.title, acronym: this.state.acronym, description: this.state.description, status: "open" }
                 resource = "projects";
                 break;
             case 'item':

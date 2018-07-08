@@ -67,15 +67,16 @@
 }
 
 .titleText {
-    margin: 0% 0% 5% 0%;
+    margin: 0% 0% 1.53% 0%;
 }
 
 /*Item*/
 .Item {
     border: 1px solid #aaaaaa;
-    width: 98%;
+    width: 97%;
     height: 60px;
     padding: 1%;
+    margin: 3% 0% 3% 0%;
 }
 
 .itemTitle {

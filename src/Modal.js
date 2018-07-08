@@ -141,5 +141,3 @@ export default class Modal extends Component {
     };
 
 }
-//this.state.project,this.state.type, this.state.priority, this.state.title, this.state.description
-/*[{"$id":"1","id":1,"title":"Ut qui quibusdam sint lab","acronym":"r","description":"Story","items":[]},{"$id":"2","id":2,"title":"Dolorem animi et ex et vo","acronym":"c","description":"Story","items":[]},{"$id":"3","id":3,"title":"Quo optio ullam et ad. Qu","acronym":"g","description":"Story","items":[]},{"$id":"4","id":4,"title":"Laudantium harum et quas ","acronym":"a","description":"Tenetur officiis quia ea qui. Et quos unde sint magnam commodi aliquid. Aut aut laudantium est officiis molestiae eligendi illo molestiae.","items":[]},{"$id":"5","id":5,"title":"Dolorem nihil et eos quos","acronym":"t","description":"Story","items":[]},{"$id":"6","id":6,"title":"Test1","acronym":"ts","description":null,"items":[]}]*/

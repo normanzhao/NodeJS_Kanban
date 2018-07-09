@@ -14,6 +14,7 @@ export default class Header extends Component {
         this.hideModal = this.hideModal.bind(this);
     };
 
+    //sets state that gets changed when a button is pressed
     hideModal() {
         this.setState({
             showModal: false,
@@ -21,6 +22,7 @@ export default class Header extends Component {
         });
     }
 
+    //the modal is technically always active, just not rendered/ visible. When a button is pressed, the modal type is set and the modal renders wi the correct UI
     render() {
         return (
             <div>

@@ -6,6 +6,7 @@ import './styles.css';
 export default class Modal extends Component {
     constructor(props) {
         super(props);
+        //state will have all data variables needed for each individual modal
         this.state = {
             project: "1",
             type: "Story",
@@ -20,6 +21,7 @@ export default class Modal extends Component {
         this.modalSelector = this.modalSelector.bind(this);
     }
 
+    //for the options, get all the data from the API via GET request, then return acronyms and value pair if items, else project names and value pair for releasing
     componentDidMount() {
         let modalType = this.props.modalType;
         axios.get(`http://localhost:3001/api/projects`)
@@ -29,12 +31,13 @@ export default class Modal extends Component {
                     if (modalType === 'item') {
                         return <option value={row.id} key={row.id}>{row.acronym}</option>;
                     }
-                    return <option value={row.id} key={row.id}>{row.title}</option>;
+                    return <option value={row.id} key={row.id}>{row.acronym}: {row.title}</option>;
                 }))
                 this.setState({ projects: rows });
             });
     }
 
+    //return different UI for the different modal types
     modalSelector(modalType) {
         switch (modalType) {
             case 'release':
@@ -42,9 +45,10 @@ export default class Modal extends Component {
                     <div>
                         Project title:
                         <select style={{ width: '50%' }} name="project" onChange={this.stateUpdater} required>
+                            {
+                                this.state.projects
+                            }
                         </select>
-                        &nbsp;Acronym:
-                        <input type="text" style={{ width: '15%', margin: '1.5% 0% 0.75  % 0%', textTransform: 'uppercase' }} name="acronym" readOnly maxLength="3" /> <br /> <br />
                         <div style={{ textAlign: 'right', width: '100%' }}>
                             <button style={{ marginRight: '2.5%' }} className="submitButton">Submit</button>
                             <button className="cancelButton" onClick={this.props.closeSelf} type="button">Cancel</button>
@@ -104,10 +108,12 @@ export default class Modal extends Component {
         }
     }
 
+    //updates the current state with any new changes in value, gets called with every single change
     stateUpdater(e) {
         this.setState({ [e.target.name]: e.target.value });
     }
 
+    //selector option to do different actions depending on the modal type, item and project adds a new item or project respetively via POST request, release will call the API and update all closed items of the selected project to "released" status via PUT request
     submitItem(e) {
         let resource;
         let data;

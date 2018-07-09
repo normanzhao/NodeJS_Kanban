@@ -86,6 +86,7 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    cursor: pointer;
 }
 
 .itemDescription {
@@ -93,6 +94,7 @@
     height: 35px;
     padding-top: 0.5%;
     white-space: initial;
+    word-break: break-all;
 }
 
 .itemAttributes {

@@ -13,14 +13,16 @@ export default class Container extends Component {
 
     //get and parse JSON file containing all the items for this specific status(open/ongoing/closed) from the API via GET request then put them all in state so render can display them when they're all loaded
     componentDidMount() {
-            axios.get('http://localhost:3001/api/items/' + this.props.class)
-                .then(res => {
-                    let itemsArray = [];
-                    itemsArray.push(res.data.map(function (item) {
-                        return <Item key={item.id} acronym={item.acronym} id={item.id} title={item.title} type={item.type} priority={item.priority} description={item.description} />
-                    }))
-                    this.setState({ items: itemsArray });
-                });
+        //add reference for "this" so the function scope would include and be able to call it
+        let thisContainer = this;
+        axios.get('http://localhost:3001/api/items/' + this.props.class)
+            .then(res => {
+                let itemsArray = [];
+                itemsArray.push(res.data.map(function (item) {
+                    return <Item key={item.id} acronym={item.acronym} id={item.id} title={item.title} type={item.type} priority={item.priority} description={item.description} passModal={thisContainer.props.passModal}/>
+                }))
+                this.setState({ items: itemsArray });
+            });
     }
 
     render() {

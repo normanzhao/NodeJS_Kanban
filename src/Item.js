@@ -7,6 +7,8 @@ export default class Item extends Component {
         this.state = {
             truncatedDescription: this.truncDesc()
         }
+
+        this.itemClick = this.itemClick.bind(this);
     }
 
     //truncate description so it looks nicer in the item div
@@ -32,11 +34,16 @@ export default class Item extends Component {
         return words.slice(0, index).join(" ") + "...";
     }
 
+    itemClick() {
+        this.props.passModal(this.props);
+    }
+
     render() {
         this.truncDesc()
-        const priority = ["fas fa-angle-double-down", "fas fa-angle-down", "far fa-circle", "fas fa-angle-up", "fas fa-angle-double-up"][parseInt(this.props.priority,10) + 2];
+        const priority = ["fas fa-angle-double-down", "fas fa-angle-down", "far fa-circle", "fas fa-angle-up", "fas fa-angle-double-up"][parseInt(this.props.priority, 10) + 2];
         const type = { Story: "fas fa-book", Feature: "fas fa-exclamation", Request: "fas fa-question", Bug: "fas fas fa-bug", Epic: "fas fa-bolt" }[this.props.type];
         return (
+            <div className='Item' onClick={this.itemClick}>
                 <div className='itemTitle'>[{this.props.acronym}]: {this.props.title} 
                     <div className='itemDescription'>{this.state.truncatedDescription} </div>
                 </div>

@@ -19,7 +19,7 @@ export default class Container extends Component {
             .then(res => {
                 let itemsArray = [];
                 itemsArray.push(res.data.map(function (item) {
-                    return <Item key={item.id} acronym={item.acronym} id={item.id} title={item.title} type={item.type} priority={item.priority} description={item.description} passModal={thisContainer.props.passModal}/>
+                    return <Item key={item.id} data={item} passModal={thisContainer.props.passModal}/>
                 }))
                 this.setState({ items: itemsArray });
             });

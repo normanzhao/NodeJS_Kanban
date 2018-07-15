@@ -50,7 +50,7 @@ export default class Modal extends Component {
                             }
                         </select>
                         <div style={{ textAlign: 'right', width: '100%' }}>
-                            <button style={{ marginRight: '2.5%' }} className="submitButton">Submit</button>
+                            <button style={{ marginRight: '2.5%' }} className="submitButton">Release</button>
                             <button className="cancelButton" onClick={this.props.closeSelf} type="button">Cancel</button>
                         </div>
                     </div>);
@@ -125,6 +125,11 @@ export default class Modal extends Component {
             case 'item':
                 data = { p_id: this.state.project, type: this.state.type, priority: this.state.priority, title: this.state.title, description: this.state.description, status: "open" }
                 resource = "items";
+                break;
+            case 'release':
+                data = { id: this.state.project, status: "released" }
+                resource = "projects/update";
+                window.confirm("Are you sure you want to release this project?");
                 break;
             default:
                 break;

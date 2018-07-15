@@ -44,7 +44,7 @@ export default class Item extends Component {
         const priority = ["fas fa-angle-double-down", "fas fa-angle-down", "far fa-circle", "fas fa-angle-up", "fas fa-angle-double-up"][parseInt(this.props.data.priority, 10) + 2];
         const type = { Story: "fas fa-book", Feature: "fas fa-exclamation", Request: "fas fa-question", Bug: "fas fas fa-bug", Epic: "fas fa-bolt" }[this.props.data.type];
         return (
-            <div className='Item' onClick={this.itemClick}>
+            <div className='Item' onClick={this.itemClick} draggable="true" >
                 <div className='itemTitle'>[{this.props.data.acronym}]: {this.props.data.title} 
                     <div className='itemDescription'>{this.state.truncatedDescription} </div>
                 </div>

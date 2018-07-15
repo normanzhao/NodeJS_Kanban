@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import axios from 'axios'
+import {insertAPI } from './functions.js'
 import './styles.css';
 
 
@@ -44,10 +44,7 @@ export default class EditModal extends Component {
     }
 
     submitItem(e) {
-        axios.put('http://localhost:3001/api/items/update', this.state)
-            .then(res => {
-                console.log(res);
-            });
+        insertAPI('items/update', this.state)
     }
 
     render() {

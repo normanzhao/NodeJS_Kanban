@@ -9,17 +9,17 @@ export default class App extends Component {
         super(props);
         this.state = {
             editData: "",
-            showModal: false 
-        }
-        this.setModal = this.setModal.bind(this)
-        this.hideModal = this.hideModal.bind(this)
+            showModal: false
+        };
+        this.setModal = this.setModal.bind(this);
+        this.hideModal = this.hideModal.bind(this);
     }
 
     setModal(data) {
         this.setState({
             editData: data,
             showModal: true
-        })
+        });
     }
 
     hideModal() {

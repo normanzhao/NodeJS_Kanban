@@ -22,9 +22,9 @@ export default class EditModal extends Component {
     }
 
     componentWillMount() {
-        let checkedDescription = this.props.data.data.description
+        let checkedDescription = this.props.data.data.description;
         if (checkedDescription === null) {
-            checkedDescription = ""
+            checkedDescription = "";
         }
         this.setState({
             id: this.props.data.data.id,
@@ -44,7 +44,7 @@ export default class EditModal extends Component {
     }
 
     submitItem(e) {
-        insertAPI('items/update', this.state)
+        insertAPI('items/update', this.state);
     }
 
     render() {
@@ -62,7 +62,7 @@ export default class EditModal extends Component {
                             <option>Epic</option>
                         </select>
                         &nbsp; Priority:
-                        <select style={{ width: '26%' }} name="priority" onChange={this.stateUpdater} defaultValue={this.state.priority}>
+                        <select style={{ width: '26%' }} name="priority" onChange={this.stateUpdater} defaultValue={this.state.priority} >
                             <option value="2">Highest priority</option>
                             <option value="1">High priority</option>
                             <option value="0">Regular priority</option>

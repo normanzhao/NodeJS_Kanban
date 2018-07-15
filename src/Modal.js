@@ -15,7 +15,7 @@ export default class Modal extends Component {
             description: "",
             acronym: "",
             projects: ""
-        }
+        };
         this.stateUpdater = this.stateUpdater.bind(this);
         this.submitItem = this.submitItem.bind(this);
         this.modalSelector = this.modalSelector.bind(this);
@@ -31,7 +31,10 @@ export default class Modal extends Component {
                     if (modalType === 'item') {
                         return <option value={row.id} key={row.id}>{row.acronym}</option>;
                     }
-                    return <option value={row.id} key={row.id}>{row.acronym}: {row.title}</option>;
+                    if (row.status !== "released") {
+                        return <option value={row.id} key={row.id}>{row.acronym}: {row.title}</option>;
+                    }
+                    return null;
                 }))
                 this.setState({ projects: rows });
             });
@@ -119,15 +122,15 @@ export default class Modal extends Component {
         let data;
         switch (this.props.modalType) {
             case 'project':
-                data = { title: this.state.title, acronym: this.state.acronym, description: this.state.description, status: "open" }
+                data = { title: this.state.title, acronym: this.state.acronym, description: this.state.description, status: "open" };
                 resource = "projects";
                 break;
             case 'item':
-                data = { p_id: this.state.project, type: this.state.type, priority: this.state.priority, title: this.state.title, description: this.state.description, status: "open" }
+                data = { p_id: this.state.project, type: this.state.type, priority: this.state.priority, title: this.state.title, description: this.state.description, status: "open" };
                 resource = "items";
                 break;
             case 'release':
-                data = { id: this.state.project, status: "released" }
+                data = { id: this.state.project, status: "released" };
                 resource = "projects/update";
                 window.confirm("Are you sure you want to release this project?");
                 break;
@@ -135,6 +138,7 @@ export default class Modal extends Component {
                 break;
         }
         insertAPI(resource, data);
+        window.location.reload();
     }
 
     render() {

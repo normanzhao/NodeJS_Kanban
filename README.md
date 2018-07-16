@@ -1,2 +1,3 @@
 # React_Kanban
-React rewrite of Kanban board
+
+Rewrote my KanbanBoard originally done in plain JS using AJAX to ReactJS using axios.

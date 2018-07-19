@@ -94,7 +94,7 @@ export default class Modal extends Component {
                             <option value="1">High priority</option>
                             <option value="0">Regular priority</option>
                             <option value="-1">Low priority</option>
-                            <option value="-0">No priority</option>
+                            <option value="-2">No priority</option>
                         </select> <br />
                         Item title:
                         <input type="text" style={{ width: '84%', margin: '1.5% 0% 0.75  % 0%' }} name="title" maxLength="35" onChange={this.stateUpdater} required/> <br />

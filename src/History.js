@@ -19,7 +19,7 @@ export default class History extends Component {
                     if (project.items.length === 0) {
                         projectRow.push(
                             <tr key={project.id}>
-                                <td>[{project.id}]{project.title}</td>
+                                <td>[{project.acronym}]{project.title}</td>
                                 <td>{project.description}</td>
                                 <td>&nbsp;</td>
                                 <td>&nbsp;</td>
@@ -32,7 +32,7 @@ export default class History extends Component {
                         let index = 0;
                         projectRow.push(
                             <tr key={project.items[index].id}>
-                                <td rowSpan={project.items.length}>[{project.id}]{project.title}</td>
+                                <td rowSpan={project.items.length}>[{project.acronym}]{project.title}</td>
                                 <td rowSpan={project.items.length}>{project.description}</td>
                                 <td>{project.items[index].title}</td>
                                 <td>{project.items[index].type}</td>

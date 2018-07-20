@@ -133,7 +133,7 @@
 }
 
 .historyTable {
-    width: 100%;
+    width: 99.5%;
     font-size: 15px;
     text-align: left;
     table-layout: auto;
@@ -142,7 +142,7 @@
 td {
     padding-left: 1%;
     border: 1px solid #aaaaaa;
-    word-break: break-all;
+    word-break: break-word;
 }
 
 

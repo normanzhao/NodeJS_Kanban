@@ -28,7 +28,7 @@ export default class Modal extends Component {
             .then(res => {
                 let rows = [];
                 rows.push(res.data.map(function (row) {
-                    if (modalType === 'item') {
+                    if (modalType === 'item' && row.status !== "released") {
                         return <option value={row.id} key={row.id}>{row.acronym}</option>;
                     }
                     if (row.status !== "released") {

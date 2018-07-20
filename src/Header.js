@@ -39,7 +39,7 @@ export default class Header extends Component {
                         <th className="header-title">KANBAN BOARD</th>
                         <th className="right" style={{ width: '150%', paddingRight: '15%', paddingTop: '5%' }}>
                             <button className="left Button" onClick={() => { this.setState({ showModal: true, modalType:"project" }); }}>New Project</button>
-                            <button className="right Button" onClick={() => { this.setState({ showModal: true, modalType:"item" }); }}>New item</button>
+                            <button className="right Button" onClick={() => { this.setState({ showModal: true, modalType:"item" }); }}>New Item</button>
                         </th>
                     </tr>
                 </tbody>

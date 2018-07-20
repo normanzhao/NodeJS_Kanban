@@ -25,6 +25,7 @@ The UI of this project is mostly done using React JSX with sprinklings of both i
 ![Main Page](https://raw.githubusercontent.com/normanzhao/React_Kanban/master/images/main_page.png)
 
 The main page consists of a header with 4 buttons, and 3 columns with the different statuses. These four buttons are:
+
 Release: Releases a project and archives it. New items can no longer be added to this project. However, a project does not require all items to be closed before released.
 
 History: Shows all released projects and their associated items. More on this later.

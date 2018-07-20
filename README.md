@@ -20,13 +20,6 @@ The backend of this project is written entirely in C# using the .NET Framework. 
 The UI of this project is mostly done using React JSX with sprinklings of both inline and imported CSS from styles.css. There's only 2 pages for this app, a main page and a history page.
 
 
-### Drag n Drop
-
-![Drag n Drop](https://raw.githubusercontent.com/normanzhao/React_Kanban/master/images/dragndrop.png)
-
-The orginal core concept of the Kanban board allows the user to drag and drop items to change their statuses. Starting a drag on an item saves the item's ID to a transfer object, and then releasing/dropping the item on a valid target( either of the other 2 columns) retrieves the item's ID and changes the status of the item on the backend.
-
-
 ### Main Page
 
 ![Main Page](https://raw.githubusercontent.com/normanzhao/React_Kanban/master/images/main_page.png)
@@ -46,6 +39,13 @@ New Item: Adds a new item and associate it to a project. The fields are type, pr
 ![History Page](https://raw.githubusercontent.com/normanzhao/React_Kanban/master/images/history_page.png)
 
 Shows all released projects and their associated items in a nice, organized manner. The header row on top is fixed and will not scroll. The projects' details take up the same amount of row spans as the amount of items, so all of a project's associated items can easily be spotted.
+
+
+### Drag n Drop
+
+![Drag n Drop](https://raw.githubusercontent.com/normanzhao/React_Kanban/master/images/dragndrop.png)
+
+The orginal core concept of the Kanban board allows the user to drag and drop items to change their statuses. Starting a drag on an item saves the item's ID to a transfer object, and then releasing/dropping the item on a valid target( either of the other 2 columns) retrieves the item's ID and changes the status of the item on the backend.
 
 
 ### Modals

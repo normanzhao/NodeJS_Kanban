@@ -18,14 +18,15 @@ export default class History extends Component {
                     let projectRow = [];
                     if (project.items.length === 0) {
                         projectRow.push(
-                            <tr key={project.id}><td>[{project.id}]{project.title}</td>
+                            <tr key={project.id}>
+                                <td>[{project.id}]{project.title}</td>
                                 <td>{project.description}</td>
                                 <td>&nbsp;</td>
                                 <td>&nbsp;</td>
                                 <td>&nbsp;</td>
                                 <td>&nbsp;</td>
                             </tr>
-                            )
+                        );
                     }
                     else {
                         let index = 0;
@@ -35,10 +36,10 @@ export default class History extends Component {
                                 <td rowSpan={project.items.length}>{project.description}</td>
                                 <td>{project.items[index].title}</td>
                                 <td>{project.items[index].type}</td>
-                                <td>{priorities[project.items[index].priority+2]}</td>
+                                <td>{priorities[project.items[index].priority + 2]}</td>
                                 <td>{project.items[index].description}</td>
                             </tr>
-                            )
+                        );
                         index++;
                         while (index < project.items.length) {
                             projectRow.push(
@@ -48,7 +49,7 @@ export default class History extends Component {
                                     <td>{priorities[project.items[index].priority + 2]}</td>
                                     <td>{project.items[index].description}</td>
                                 </tr>
-                            )
+                            );
                             index++;
                         }
                     }
@@ -64,29 +65,27 @@ export default class History extends Component {
                 <table className="headerRow">
                     <tbody>
                         <tr>
-                            <th> PROJECT NAME </th>
-                            <th> PROJECT DESCRIPTION </th>
-                            <th> ITEM TITLE </th>
-                            <th> ITEM TYPE </th>
-                            <th> ITEM PRIORITY </th>
-                            <th> ITEM DESCRIPTION </th>
+                            <th style={{ width: '15%' }}>PROJECT NAME</th>
+                            <th style={{ width: '25%' }}>PROJECT DESCRIPTION</th>
+                            <th style={{ width: '13%' }}>ITEM TITLE</th>
+                            <th style={{ width: '12%' }}>ITEM TYPE</th>
+                            <th style={{ width: '15%' }}>ITEM PRIORITY</th>
+                            <th style={{ width: '20%' }}>ITEM DESCRIPTION</th>
                         </tr>
                     </tbody>
                 </table>
                 <table className="historyTable">
                     <tbody>
                         <tr>
-                            <th> &nbsp; </th>
-                            <th> &nbsp; </th>
-                            <th> &nbsp; </th>
-                            <th> &nbsp; </th>
-                            <th> &nbsp; </th>
-                            <th> &nbsp; </th>
-                        </tr>
-                        {this.state.projects}
+                            <th style={{ width: '15%' }}>&nbsp;</th>
+                            <th style={{ width: '25%' }}>&nbsp;</th>
+                            <th style={{ width: '13%' }}>&nbsp;</th>
+                            <th style={{ width: '12%' }}>&nbsp;</th>
+                            <th style={{ width: '15%' }}>&nbsp;</th>
+                            <th style={{ width: '20%' }}>&nbsp;</th>
+                        </tr>{this.state.projects}
                     </tbody>
                 </table>
-                <input className="fixed search" type="text" maxLength="3" placeholder="Search project by acronym"/>
             </div>
         );
     }

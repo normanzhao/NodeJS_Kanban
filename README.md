@@ -16,6 +16,16 @@ The backend of this project is written entirely in C# using the .NET Framework. 
 
 
 
+## Viewer
+
+![Kanban Viewer](https://raw.githubusercontent.com/normanzhao/React_Kanban/master/images/viewer.png)
+
+This is my first foray into AngularJS. It is a read-only viewer for all projects and their associated items that's been committed into the Kanban board. The selector on top is the only input element, where the user can select a project to view. All the items associated with the project will then populate across the three status container columns. None of the items can be editted or changed in any way. The only other difference between this viewer and the actual Frontend of this project is that there are 4 columns instead of 3. The additional column is for projects and items that has been released.
+
+
+
+
+
 ## UI
 The UI of this project is mostly done using React JSX with sprinklings of both inline and imported CSS from styles.css. There's only two pages for this app, a main page and a history page. 
 

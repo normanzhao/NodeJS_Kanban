@@ -10,7 +10,7 @@ The entire frontend of this project was done in ReactJS and utilizes both vanill
 
 
 ## Backend
-The backend of this project is written entirely in C# using the .NET Framework. A database file is bound and accessed using the Entity Framework. Using EF's data models, the primary two models (projects and items) are bound to Data Transfer Objects for the API to retrieve and update. I also created a few addtional DTOs to limit the exposure of data. Method calls hitting the API request only the data needed, and nothing more. This is done by either limiting the fields being returned or updated by method calls, or by JOINing th two primary models and then only exposing the required fields. Depency Injection was also added in using a repository pattern. This enables me to change how data interacts with the rest of the backend at a later time while keeping both parts independent.
+The backend of this project is written entirely in C# using the .NET Framework. A database file is bound and accessed using the Entity Framework. Using EF's data models, the primary two models (projects and items) are bound to Data Transfer Objects for the API to retrieve and update. I also created a few addtional DTOs to limit the exposure of data. Method calls hitting the API request only the data needed, and nothing more. This is done by either limiting the fields being returned or updated by method calls, or by JOINing th two primary models and then only exposing the required fields. Dependency Injection was also added in using a repository pattern. This enables me to change how data interacts with the rest of the backend at a later time while keeping both parts independent.
 
 
 

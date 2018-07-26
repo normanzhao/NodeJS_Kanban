@@ -72,5 +72,3 @@ export default class Item extends Component {
     }
 
 }
-// id="open" onDrop="drop(event)" onDragover="allowDrop"
-// onDragstart="return false;" onDrop="false"

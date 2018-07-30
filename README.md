@@ -1,6 +1,19 @@
 # React_Kanban
 
-Rewrote my original [Kanban-Board](https://github.com/normanzhao/Kanban-board) originally done in plain JS using AJAX and PHP to ReactJS using AJAX,axios, .NET and Entity Framework.The core functionality of this app was to be able to drag and drop items into the three categories, and this was achieved using Javascript on the UI to have this functinality, React and AJAX on the frontend to hit the API to update the items' statuses, and .NET and Entity Framework to perform the actual data updates!
+Rewrote my original [Kanban-Board](https://github.com/normanzhao/Kanban-board) originally done in plain JS using AJAX and PHP to ReactJS using AJAX,axios, .NET and Entity Framework. The core functionality of this app was to be able to drag and drop items into the three categories, and this was achieved using Javascript on the UI to have this functinality, React and AJAX on the frontend to hit the API to update the items' statuses, and .NET and Entity Framework to perform the actual data updates!
+
+Features include:
+
+- Create new projects and items
+- 3 columns to sort tasks in various states of development (open, ongoing, closed)
+- Item priorities and types based off JIRA (Priorities range from lowest to highest, types include story, bug, request, feature and epic)
+- Drag and drop items to different columns when changing development status
+- Edit items once it's been created
+- Modals to create or update data so the app is single-paged
+- Release projects once they are completed
+- A history page detailing all past released projects and their associated items
+- RESTful API that serves JSON data
+- A viewer built in AngularJS that quickly shows all items in a project, current or released
 
 ## Frontend
 The entire frontend of this project was done in ReactJS and utilizes both vanilla AJAX and axios calls. The reason for this is that axios sometimes send preflight headers when sending POST and PUT requests. AJAX does not. CORS actively rejects requests using these preflight headers, so AJAX is used to send POST requests while axios is used for the GET requests. In lieu of using PUT requests to update the backend, a POST request is sent instead.

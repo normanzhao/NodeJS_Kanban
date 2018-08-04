@@ -12,7 +12,7 @@ export default class History extends Component {
     componentWillMount() {
         let getProjects = [];
         const priorities = ["No priority", "Low priority", "Regular priority", "High priority", "Highest priority"]
-        axios.get('http://localhost:3001/api/projects/released/')
+        axios.get('http://localhost:3001/api/projects/all/released/')
             .then(res => {
                 getProjects.push(res.data.map(function (project) {
                     let projectRow = [];

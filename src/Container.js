@@ -31,8 +31,7 @@ export default class Container extends Component {
     //get the item id via datatransfer and then set the item's status to the new status
     drop(e) {
         let itemID = e.dataTransfer.getData("Text");
-        console.log(this.state)
-        insertAPI('items/status-update', { id: itemID, status: this.props.class })
+        insertAPI('items/update', { id: itemID, status: this.props.class })
         window.location.reload();
     }
 

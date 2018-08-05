@@ -29,7 +29,6 @@ export default class Item extends Component {
         let letters = 0;
         let index = 0;
         while (letters <= 105 && index < words.length) {
-            console.log(words[index]);
             letters += words[index].length;
             index++;
         }

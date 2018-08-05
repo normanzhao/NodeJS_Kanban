@@ -8,7 +8,7 @@ export default class History extends Component {
             projects: ""
         };
     }
-    //get items to test, then get projects, then use a single loop for project acrponym
+    //Load project-related information in merged cells, load items related to that project as separate cells
     componentWillMount() {
         let getProjects = [];
         const priorities = ["No priority", "Low priority", "Regular priority", "High priority", "Highest priority"]
@@ -29,6 +29,7 @@ export default class History extends Component {
                         );
                     }
                     else {
+                        //merge cells if there are multiple items related to the project
                         let index = 0;
                         projectRow.push(
                             <tr key={project.items[index].id}>
@@ -58,7 +59,7 @@ export default class History extends Component {
                 this.setState({ projects: getProjects })
             });
     }
-
+    //the first set of header rows is fixed while the second one is just a spacer so the table underneath won't have a hidden top row
     render() {
         return (
             <div>

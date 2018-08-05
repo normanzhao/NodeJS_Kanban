@@ -15,6 +15,7 @@ export default class App extends Component {
         this.hideModal = this.hideModal.bind(this);
     }
 
+    //show edit modal, the code is located here because the state is bubbled up. This component owns the edit modal so only one instance needs to be created
     setModal(data) {
         this.setState({
             editData: data,
@@ -22,6 +23,7 @@ export default class App extends Component {
         });
     }
 
+    //hide edit-modal when not in use
     hideModal() {
         this.setState({
             showModal: false,
